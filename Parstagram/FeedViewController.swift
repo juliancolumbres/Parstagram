@@ -47,25 +47,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.usernameLabel.text = user.username
         
             cell.captionLabel.text = post["caption"] as! String
-        
             let imageFile = post["image"] as! PFFileObject
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
-        
             cell.photoView.af_setImage(withURL: url)
-        
-        
             return cell
+            
         } else if indexPath.row <= comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
             let comment = comments[indexPath.row - 1]
-            cell.nameLabel.text = comment["text"] as! String
+            cell.commentLabel.text = comment["text"] as! String
             let user = comment["author"] as! PFUser
             cell.nameLabel.text = user.username
             return cell
         
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            
             return cell
         }
         
@@ -112,10 +110,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         commentBar.inputTextView.resignFirstResponder()
     }
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

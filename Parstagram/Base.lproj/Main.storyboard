@@ -168,7 +168,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="commentLabel" destination="X7A-TP-jQi" id="L1R-mP-8Nl"/>
+                                            <outlet property="commentLabel" destination="X7A-TP-jQi" id="voC-YP-PTL"/>
                                             <outlet property="nameLabel" destination="QZt-9a-zEU" id="D4x-j7-Co9"/>
                                         </connections>
                                     </tableViewCell>
